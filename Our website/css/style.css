@@ -1,0 +1,154 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	min-height: 100vh;
+	background:url('https://images.squarespace-cdn.com/content/v1/580fa9f7e58c62cb7501937b/1496358009519-3OOP60SU1L9CWOXN544R/bedroom.gif?format=2500w');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+
+.navigation{
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	bottom: 20px;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	border-right: 8px solid #ffffff;
+	width: 300px;
+	min-height: 500px;
+	background: #4d5df9;
+	transition: width 0.5;
+	overflow: hidden;
+	white-space: nowrap;
+	text-transform: capitalize;
+}
+
+.nav-300 { animation: changeWidth300 .4s 1 forwards; }
+
+.nav-60 { animation: changeWidth60 .4s 1 forwards; }
+
+@keyframes changeWidth60 {
+	100% {
+		width: 72px;
+		background: #4d5df908;
+		border: 1px solid #ffffff;
+		border-right: 8px solid #ffffff;
+	}
+}
+
+@keyframes changeWidth300 {
+	0% { width: 72px; }
+	100% { width: 300px; }
+}
+
+.navigation ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 40px;
+	padding-left: 5px;
+}
+
+.navigation ul li{
+	position: relative;
+	list-style: none;
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active{
+	background: #ffffff;
+}
+
+.navigation ul li.active a {
+	color: #333;
+}
+
+.navigation ul li a{
+	position: relative;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navigation ul li a .icon{
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 50px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+	font-size: 1.8em;
+}
+
+.navigation ul li a .title{
+	position: relative;
+	display: block;
+	padding-left: 60px;
+	height: 60px;
+	line-height: 60px;
+	white-space: normal;
+}
+
+.list a {
+	display: flex;
+	align-items: center;
+}
+
+.toggle-menu {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background: #4d5bf9;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.toggle-menu .bars,
+.toggle-menu .close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../img/bars.svg');
+	background-size: 80% 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.toggle-menu .close {
+	background-image: url('../img/close.svg');
+}
+
+.none {
+	display: none;
+}
+
+
+@media screen and (max-width: 480px) {
+	.navigation {
+		width: calc(100% - 50px);
+		margin-left: 20px;
+		border-color: transparent;
+	}
+
+	.toggle-menu {
+		border: 1px solid #ffffff;
+	}
+}
